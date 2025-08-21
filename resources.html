@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resources - JMLI</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
       <h1>JMLI</h1>
     </div>
     <nav>
-      <ul class="nav-links">
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="programs.html">Programs</a></li>
@@ -24,48 +24,36 @@
         <li><a href="counselling.html">Counselling</a></li>
         <li><a href="support.html">Support</a></li>
       </ul>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
     </nav>
   </header>
 
-  <!-- Page Header -->
-  <section class="page-header">
-    <h2>Resources</h2>
-    <p>Explore our curated materials designed to inspire, guide, and equip young people for leadership and impactful living.</p>
-  </section>
-
   <!-- Resources Section -->
-  <section class="resources">
-    <div class="container resource-grid">
+  <section class="programs">
+    <div class="container">
+      <h2>Our Resources</h2>
+      <p>
+        At <strong>JMLI</strong>, we provide curated materials designed to inspire, guide, and equip young people for leadership and impactful living. Each resource is created to foster personal growth, responsibility, and positive influence.
+      </p>
 
-      <!-- Do I Have To -->
-      <div class="resource-card">
-        <img src="images/book.svg" alt="Book Icon">
-        <h3>Do I Have To?</h3>
-        <p>A thoughtful PDF resource addressing essential questions young people face about responsibility, choices, and personal growth.</p>
-        <a href="pdfs/do_i_have_to.pdf" class="btn-download" download>Download PDF</a>
+      <div class="program-grid">
+        <div class="program-card">
+          <h3>Do I Have To?</h3>
+          <p>A thoughtful PDF addressing essential questions young people face about responsibility, choices, and personal growth.</p>
+          <a href="pdfs/do_i_have_to.pdf" class="btn-download" download>Download PDF</a>
+        </div>
+
+        <div class="program-card">
+          <h3>Mentorship Handbook</h3>
+          <p>A practical guide on building impactful mentor-mentee relationships that foster personal and academic growth.</p>
+          <a href="pdfs/mentorship_handbook.pdf" class="btn-download" download>Download PDF</a>
+        </div>
+
+        <div class="program-card">
+          <h3>Community Manual</h3>
+          <p>A resource on effective community outreach and leadership through service, designed for young changemakers.</p>
+          <a href="pdfs/community_manual.pdf" class="btn-download" download>Download PDF</a>
+        </div>
       </div>
-
-      <!-- Mentorship Handbook -->
-      <div class="resource-card">
-        <img src="images/mentorship.svg" alt="Mentorship Icon">
-        <h3>Mentorship Handbook</h3>
-        <p>A practical guide on building impactful mentor-mentee relationships that foster personal and academic growth.</p>
-        <a href="pdfs/mentorship_handbook.pdf" class="btn-download" download>Download PDF</a>
-      </div>
-
-      <!-- Community Manual -->
-      <div class="resource-card">
-        <img src="images/community.svg" alt="Community Icon">
-        <h3>Community Manual</h3>
-        <p>A resource on effective community outreach and leadership through service, designed for young changemakers.</p>
-        <a href="pdfs/community_manual.pdf" class="btn-download" download>Download PDF</a>
-      </div>
-
     </div>
   </section>
 
@@ -76,16 +64,6 @@
       <p>Contact us: +234 814 307 9345 | Email: info@jmli.org.ng</p>
     </div>
   </footer>
-
-  <!-- Mobile Nav Toggle -->
-  <script>
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav-links");
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("nav-active");
-      hamburger.classList.toggle("toggle");
-    });
-  </script>
 
 </body>
 </html>
