@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resources - JMLI</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -16,7 +16,7 @@
       <h1>JMLI</h1>
     </div>
     <nav>
-      <ul>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="programs.html">Programs</a></li>
@@ -24,44 +24,48 @@
         <li><a href="counselling.html">Counselling</a></li>
         <li><a href="support.html">Support</a></li>
       </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
   </header>
 
+  <!-- Page Header -->
+  <section class="page-header">
+    <h2>Resources</h2>
+    <p>Explore our curated materials designed to inspire, guide, and equip young people for leadership and impactful living.</p>
+  </section>
+
   <!-- Resources Section -->
   <section class="resources">
-    <div class="container">
-      <h2>Our Resources</h2>
-      <p>
-        JMLI provides valuable materials and guides for youths. Click the links below to download PDFs or access important resources that support growth and learning.
-      </p>
+    <div class="container resource-grid">
 
-      <div class="resource-grid">
-
-        <div class="resource-card">
-          <h3>Leadership Guide</h3>
-          <p>A comprehensive PDF guide on developing leadership skills, responsibility, and influence.</p>
-          <a href="resources/leadership_guide.pdf" class="btn-download" download>Download PDF</a>
-        </div>
-
-        <div class="resource-card">
-          <h3>Personal Development Workbook</h3>
-          <p>Interactive workbook with exercises to strengthen personal growth and life skills.</p>
-          <a href="resources/personal_dev_workbook.pdf" class="btn-download" download>Download PDF</a>
-        </div>
-
-        <div class="resource-card">
-          <h3>Career Planning Guide</h3>
-          <p>Step-by-step guide to help youths plan their career paths effectively.</p>
-          <a href="resources/career_planning.pdf" class="btn-download" download>Download PDF</a>
-        </div>
-
-        <div class="resource-card">
-          <h3>Community Engagement Toolkit</h3>
-          <p>Materials and templates for organizing community outreach and youth programs.</p>
-          <a href="resources/community_toolkit.pdf" class="btn-download" download>Download PDF</a>
-        </div>
-
+      <!-- Do I Have To -->
+      <div class="resource-card">
+        <img src="images/book.svg" alt="Book Icon">
+        <h3>Do I Have To?</h3>
+        <p>A thoughtful PDF resource addressing essential questions young people face about responsibility, choices, and personal growth.</p>
+        <a href="pdfs/do_i_have_to.pdf" class="btn-download" download>Download PDF</a>
       </div>
+
+      <!-- Mentorship Handbook -->
+      <div class="resource-card">
+        <img src="images/mentorship.svg" alt="Mentorship Icon">
+        <h3>Mentorship Handbook</h3>
+        <p>A practical guide on building impactful mentor-mentee relationships that foster personal and academic growth.</p>
+        <a href="pdfs/mentorship_handbook.pdf" class="btn-download" download>Download PDF</a>
+      </div>
+
+      <!-- Community Manual -->
+      <div class="resource-card">
+        <img src="images/community.svg" alt="Community Icon">
+        <h3>Community Manual</h3>
+        <p>A resource on effective community outreach and leadership through service, designed for young changemakers.</p>
+        <a href="pdfs/community_manual.pdf" class="btn-download" download>Download PDF</a>
+      </div>
+
     </div>
   </section>
 
@@ -72,6 +76,16 @@
       <p>Contact us: +234 814 307 9345 | Email: info@jmli.org.ng</p>
     </div>
   </footer>
+
+  <!-- Mobile Nav Toggle -->
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("nav-active");
+      hamburger.classList.toggle("toggle");
+    });
+  </script>
 
 </body>
 </html>
