@@ -525,5 +525,52 @@ footer a:hover {
   }
 }
 
+/* ===== Responsive Design for Counselling ===== */
+@media (max-width: 992px) {
+  .counselling-section h2 {
+    font-size: 2rem;
+  }
+
+  .counselling-section p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .counselling-section {
+    padding: 40px 15px;
+  }
+
+  .counselling-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .counselling-section p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .phone-numbers {
+    font-size: 1rem;
+  }
+
+  .btn-call {
+    width: 100%;      /* button fills screen on small devices */
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .counselling-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .btn-call {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
 
 
