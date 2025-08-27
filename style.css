@@ -280,6 +280,52 @@ header nav ul li a.active {
   background-color: #005fa3;
 }
 
+
+/* ===== Support Section ===== */
+.support-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.support-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0077cc;
+}
+
+.support-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  color: #333;
+}
+
+.support-section .support-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Optional: Support Button */
+.support-section .btn-support {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #0077cc;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.support-section .btn-support:hover {
+  background-color: #005fa3;
+}
 /* ===== Volunteers Section ===== */
 .volunteers {
   padding: 60px 20px;
@@ -337,52 +383,6 @@ header nav ul li a.active {
   .volunteer-contact {
     font-size: 1rem;
   }
-}
-
-/* ===== Support Section ===== */
-.support-section {
-  padding: 60px 20px;
-  text-align: center;
-  background-color: #f9f9f9;
-}
-
-.support-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #0077cc;
-}
-
-.support-section p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-  color: #333;
-}
-
-.support-section .support-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Optional: Support Button */
-.support-section .btn-support {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: #0077cc;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
-
-.support-section .btn-support:hover {
-  background-color: #005fa3;
 }
 
 /* ===== Footer ===== */
@@ -631,6 +631,7 @@ footer a:hover {
     padding: 10px;
   }
 }
+
 
 
 
