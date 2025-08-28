@@ -277,6 +277,9 @@ header nav ul li a.active {
   text-align: center;           /* ensures button text is centered */
   margin: 0 auto;               /* centers the button horizontally */
   display: block;               /* makes the button behave as a block */
+  max-width: 200px;             /* set a max-width for the button */
+  width: 100%;                  /* allows the button to be responsive */
+  box-sizing: border-box;       /* ensures padding is included in width */
 }
 
 .btn-download:hover {
@@ -660,6 +663,7 @@ footer a:hover {
     padding: 10px;
   }
 }
+
 
 
 
