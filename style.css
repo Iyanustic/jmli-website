@@ -279,6 +279,11 @@ header nav ul li a.active {
 .btn-download:hover {
   background-color: #005fa3;
 }
+/* Force Download Button Center */
+.resource-card .btn-download {
+  margin: 0 auto;          /* centers button horizontally */
+  display: inline-block;   /* keeps it as a block that can be centered */
+}
 
 
 /* ===== Support Section ===== */
@@ -631,6 +636,7 @@ footer a:hover {
     padding: 10px;
   }
 }
+
 
 
 
