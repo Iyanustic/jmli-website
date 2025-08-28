@@ -232,13 +232,14 @@ header nav ul li a.active {
   background-color: #fff;
   padding: 2rem 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;          /* centers text */
-  display: flex;               /* use flex to centralize content vertically if needed */
+  display: flex;               /* use flex to centralize content vertically */
   flex-direction: column;      
   align-items: center;         /* horizontally centers all children */
-  justify-content: space-between;  /* optional for equal spacing top/bottom */
+  justify-content: flex-start; /* keeps content starting from top */
+  height: 100%;                /* ensures full height for flexibility */
 }
 
 .resource-card img {
@@ -261,7 +262,7 @@ header nav ul li a.active {
 
 .resource-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .btn-download {
@@ -274,18 +275,41 @@ header nav ul li a.active {
   font-weight: 600;
   transition: background-color 0.3s ease;
   text-align: center;           /* ensures button text is centered */
+  margin: 0 auto;               /* centers the button horizontally */
+  display: block;               /* makes the button behave as a block */
 }
 
 .btn-download:hover {
   background-color: #005fa3;
 }
-/* Force Download Button Center */
-.resource-card .btn-download {
-  margin: 0 auto;          /* centers button horizontally */
-  display: inline-block;   /* keeps it as a block that can be centered */
+
+/* ===== Responsive Design for Resources Section ===== */
+@media (max-width: 768px) {
+  .resources {
+    padding: 40px 15px;  /* Adjust padding for smaller screens */
+  }
+
+  .resource-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .resource-card img {
+    width: 50px;  /* Resize image for smaller screens */
+  }
+
+  .resource-card h3 {
+    font-size: 1.1rem;  /* Adjust font size */
+  }
+
+  .resource-card p {
+    font-size: 0.9rem;  /* Adjust font size */
+  }
+
+  .btn-download {
+    font-size: 1rem;  /* Increase font size on button */
+    padding: 0.6rem 1.5rem;  /* Increase padding for better tap area */
+  }
 }
-
-
 /* ===== Support Section ===== */
 .support-section {
   padding: 60px 20px;
@@ -636,6 +660,7 @@ footer a:hover {
     padding: 10px;
   }
 }
+
 
 
 
