@@ -1,11 +1,14 @@
 function payWithPaystack() {
-  var amount = document.getElementById('donation-amount').value;
-  
+  // Get and clean the amount (remove commas)
+  var amountField = document.getElementById('donation-amount');
+  var amount = amountField.value.replace(/,/g, '');
+
   if (!amount || amount <= 0) {
     alert("Please enter a valid donation amount");
     return;
   }
 
+  // Get the email value
   var email = document.getElementById('donor-email')?.value || 'oyebamijiadeiyanu@gmail.com'; // fallback email
 
   var handler = PaystackPop.setup({
@@ -29,9 +32,6 @@ function payWithPaystack() {
       // Clear input fields after successful payment
       document.getElementById('donor-email').value = '';
       document.getElementById('donation-amount').value = '';
-
-      // Optionally redirect to a Thank You page
-      // window.location.href = "thank-you.html";
     },
     onClose: function(){
       alert('Transaction was not completed, window closed.');
