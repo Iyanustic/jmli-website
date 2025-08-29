@@ -28,19 +28,21 @@
   </header>
 
 <!-- Support Section -->
-<section class="support-section">
-  <div class="container">
-    <h2>Support Our Annual Project</h2>
-    <p>
-      Your contribution will help us enroll underprivileged children in school and empower juveniles in homes of reprimand with skills for a productive life.
-    </p>
-    <img src="images/jmli support.JPG" alt="Support JMLI" class="support-image">
+  <section class="support-section">
+    <div class="container">
+      <h2>Support Our Annual Project</h2>
+      <p>
+        Your contribution will help us enroll underprivileged children in school and empower juveniles in homes of reprimand with skills for a productive life.
+      </p>
+      <img src="images/jmli support.JPG" alt="Support JMLI" class="support-image">
 
-    <!-- Paystack Donation Button -->
-    <div style="text-align:center; margin-top:20px;">
-      <button class="btn-support" type="button" onclick="payWithPaystack()">Support Us</button>
+      <!-- Donation Inputs -->
+      <div style="text-align:center; margin-top:20px;">
+        <input type="email" id="donor-email" placeholder="Enter your email" style="padding:8px; margin:5px; width:200px;">
+        <input type="number" id="donation-amount" placeholder="Enter amount in Naira" style="padding:8px; margin:5px; width:200px;">
+        <button class="btn-support" type="button" onclick="payWithPaystack()">Support Us</button>
+      </div>
     </div>
-  </div>
 </section>
 <div class="section-divider"></div>
   
@@ -73,37 +75,10 @@
       <p>Contact us: +234 814 307 9345 | Email: juvenilementorship@gmail.com</p>
     </div>
   </footer>
-  
- <!-- Paystack inline script -->
-  <script src="https://js.paystack.co/v1/inline.js"></script>
-  <script>
-    function payWithPaystack() {
-      var handler = PaystackPop.setup({
-        key: 'pk_test_438df37c1726d35987d94ab4255561db69a07c51', // Replace with your TEST public key
-        email: 'oyebamijiadeiyanu@gmail.com', // Optional: donor can prefill or leave empty
-        amount: 5000, // Amount in kobo (₦50 = 5000 kobo)
-        currency: 'NGN',
-        ref: 'JMLI_' + Math.floor((Math.random() * 1000000000) + 1), // Unique reference
-        metadata: {
-          custom_fields: [
-            {
-              display_name: "Supporter Name",
-              variable_name: "supporter_name",
-              value: ""
-            }
-          ]
-        },
-        callback: function(response){
-          alert('Thank you for your donation! Reference: ' + response.reference);
-          // Optionally redirect or verify payment via backend here
-        },
-        onClose: function(){
-          alert('Transaction was not completed, window closed.');
-        }
-      });
-      handler.openIframe();
-    }
-  </script>
+<!-- Paystack inline script -->
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="paystack.js"></script>
+
 
 </body>
 </html>
