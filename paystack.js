@@ -25,10 +25,18 @@ function payWithPaystack() {
     },
     callback: function(response){
       alert('Thank you for your donation! Reference: ' + response.reference);
+
+      // Clear input fields after successful payment
+      document.getElementById('donor-email').value = '';
+      document.getElementById('donation-amount').value = '';
+
+      // Optionally redirect to a Thank You page
+      // window.location.href = "thank-you.html";
     },
     onClose: function(){
       alert('Transaction was not completed, window closed.');
     }
   });
+
   handler.openIframe();
 }
