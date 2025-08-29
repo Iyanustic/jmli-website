@@ -18,7 +18,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 50px;
-  background-color: #003366; /* deep navy blue */
+  background-color: #003366;
   color: #fff;
 }
 
@@ -50,22 +50,22 @@ header nav ul li a {
 
 header nav ul li a:hover,
 header nav ul li a.active {
-  color: #00bfff; /* light blue highlight */
+  color: #00bfff;
 }
 
-/* ===== Hero Section (Home Page) ===== */
+/* ===== Hero Section ===== */
 .hero {
   background: url('images/hero-bg.jpg') no-repeat center center/cover;
   height: 80vh;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
 }
 
 .hero .overlay {
-  background: rgba(0, 51, 102, 0.7); /* blue transparent overlay */
+  background: rgba(0, 51, 102, 0.7);
   padding: 40px;
   border-radius: 10px;
   color: #fff;
@@ -106,7 +106,7 @@ header nav ul li a.active {
   margin-bottom: 20px;
 }
 
-/* ===== About Page Sections ===== */
+/* ===== About, Mission & Values Sections ===== */
 .about, .mission-vision, .values {
   padding: 60px 20px;
   text-align: center;
@@ -118,7 +118,6 @@ header nav ul li a.active {
   line-height: 1.8;
 }
 
-/* Grid Layout */
 .grid {
   display: grid;
   gap: 20px;
@@ -126,7 +125,6 @@ header nav ul li a.active {
   margin-top: 40px;
 }
 
-/* Card Styling */
 .card {
   background: #fff;
   padding: 20px;
@@ -140,13 +138,12 @@ header nav ul li a.active {
   transform: translateY(-5px);
 }
 
-.card h4, .card h3 {
+.card h3, .card h4 {
   margin-bottom: 10px;
   font-size: 1.2rem;
   color: #003366;
 }
 
-/* Values List */
 .values .values-list {
   list-style: none;
   padding: 0;
@@ -163,7 +160,7 @@ header nav ul li a.active {
   line-height: 1.6;
 }
 
-/* ===== Programs Page ===== */
+/* ===== Programs Section ===== */
 .programs {
   padding: 60px 20px;
 }
@@ -177,10 +174,8 @@ header nav ul li a.active {
 
 .programs p {
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem auto;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
   font-size: 1rem;
 }
 
@@ -194,7 +189,7 @@ header nav ul li a.active {
   background-color: #fff;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -212,7 +207,7 @@ header nav ul li a.active {
 
 .program-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
 /* ===== Resources Section ===== */
@@ -229,17 +224,17 @@ header nav ul li a.active {
 }
 
 .resource-card {
-  background-color: #fff;
+  background: #fff;
   padding: 2rem 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;          /* centers text */
-  display: flex;               /* use flex to centralize content vertically */
-  flex-direction: column;      
-  align-items: center;         /* horizontally centers all children */
-  justify-content: flex-start; /* keeps content starting from top */
-  height: 100%;                /* ensures full height for flexibility */
 }
 
 .resource-card img {
@@ -250,74 +245,38 @@ header nav ul li a.active {
 .resource-card h3 {
   margin-bottom: 0.5rem;
   color: #0077cc;
-  text-align: center;          /* ensures title is centered */
 }
 
 .resource-card p {
   font-size: 0.95rem;
   color: #555;
   margin-bottom: 1.5rem;
-  text-align: center;          /* centers description */
 }
 
 .resource-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
 .btn-download {
-  display: inline-block;
-  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+  max-width: 200px;
+  width: 100%;
+  padding: 0.6rem 1.2rem;
   background-color: #0077cc;
   color: #fff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
   font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+  text-decoration: none;
   transition: background-color 0.3s ease;
-  text-align: center;           /* ensures button text is centered */
-  margin: 0 auto;               /* centers the button horizontally */
-  display: block;               /* makes the button behave as a block */
-  max-width: 200px;             /* set a max-width for the button */
-  width: 100%;                  /* allows the button to be responsive */
-  box-sizing: border-box;       /* ensures padding is included in width */
 }
 
 .btn-download:hover {
   background-color: #005fa3;
 }
 
-/* ===== Responsive Design for Resources Section ===== */
-@media (max-width: 768px) {
-  .resources {
-    padding: 40px 15px;  /* Adjust padding for smaller screens */
-  }
-
-  .resource-card {
-    padding: 1.5rem 1rem;
-  }
-
-  .resource-card img {
-    width: 50px;  /* Resize image for smaller screens */
-  }
-
-  .resource-card h3 {
-    font-size: 1.1rem;  /* Adjust font size */
-  }
-
-  .resource-card p {
-    font-size: 0.9rem;  /* Adjust font size */
-  }
-
-  .btn-download {
-    font-size: 1rem;  /* Increase font size on button */
-    padding: 0.6rem 1.5rem;  /* Increase padding for better tap area */
-  }
-}
-/* ===== Section Divider ===== */
-.section-divider {
-  border-top: 2px solid #0077cc;  /* Light blue divider line */
-  margin: 40px 0;
-}
 /* ===== Support Section ===== */
 .support-section {
   padding: 60px 20px;
@@ -348,26 +307,71 @@ header nav ul li a.active {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Optional: Support Button */
 .support-section .btn-support {
   display: inline-block;
   padding: 12px 25px;
   background-color: #0077cc;
   color: #fff;
-  text-decoration: none;
   font-weight: 600;
   border-radius: 8px;
+  text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .support-section .btn-support:hover {
   background-color: #005fa3;
 }
+
+/* ===== Donation Form ===== */
+.donation-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.donation-form label {
+  font-weight: 600;
+  color: #003366;
+  display: block;
+  width: 100%;
+  text-align: left;
+  max-width: 250px;
+}
+
+.donation-form input,
+.donation-form button {
+  width: 250px;
+  max-width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.donation-form input {
+  border: 1px solid #ccc;
+}
+
+.donation-form button {
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.donation-form button:hover {
+  background-color: #005fa3;
+}
+
 /* ===== Volunteers Section ===== */
 .volunteers {
   padding: 60px 20px;
   text-align: center;
-  background-color: #f0f8ff; /* light background */
+  background-color: #f0f8ff;
 }
 
 .volunteers h2 {
@@ -411,38 +415,6 @@ header nav ul li a.active {
   text-decoration: underline;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .volunteers h2 {
-    font-size: 2rem;
-  }
-  .volunteers p,
-  .volunteer-contact {
-    font-size: 1rem;
-  }
-}
-
-/* ===== Footer ===== */
-footer {
-  background-color: #003366;
-  color: #fff;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-footer p {
-  margin: 5px 0;
-  font-size: 0.95rem;
-}
-
-footer a {
-  color: #00bfff;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
 /* ===== Counselling Section ===== */
 .counselling-section {
   padding: 60px 20px;
@@ -452,228 +424,4 @@ footer a:hover {
 
 .counselling-section h2 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #0077cc;
-}
-
-.counselling-section p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-  color: #333;
-}
-
-.phone-numbers {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  color: #003366;
-}
-
-.phone-numbers span {
-  display: block;
-  margin: 8px 0;
-  font-weight: 600;
-}
-
-.btn-call {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: #0077cc;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  margin-top: 15px;
-}
-
-.btn-call:hover {
-  background-color: #005fa3;
-}
-
-/* ===== Responsive Design for Counselling ===== */
-@media (max-width: 768px) {
-  .counselling-section h2 {
-    font-size: 2rem;
-  }
-
-  .counselling-section p,
-  .phone-numbers {
-    font-size: 1rem;
-  }
-
-  .btn-call {
-    padding: 10px 20px;
-    font-size: 0.95rem;
-  }
-}
-
-
-/* ===== Responsive Design ===== */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    padding: 15px 20px;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  header nav ul li {
-    margin: 10px 0;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .page-header h2 {
-    font-size: 2rem;
-  }
-
-  .page-header p {
-    font-size: 1rem;
-  }
-}
-
-/* ===== Extra Responsive Tweaks ===== */
-
-/* Tablet screens */
-@media (max-width: 992px) {
-  .about p,
-  .mission-vision p,
-  .values p {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
-
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-}
-
-/* Mobile screens */
-@media (max-width: 600px) {
-  header {
-    padding: 10px 15px;
-  }
-
-  header .logo img {
-    width: 40px;
-  }
-
-  header h1 {
-    font-size: 1.2rem;
-  }
-
-  .about h2,
-  .mission-vision h3,
-  .values h3 {
-    font-size: 1.5rem;
-  }
-
-  .about p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  .card {
-    padding: 15px;
-  }
-
-  .card h3, .card h4 {
-    font-size: 1.05rem;
-  }
-
-  nav ul {
-    width: 100%;
-  }
-
-  nav ul li a {
-    display: block;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-  }
-}
-
-/* Very small phones */
-@media (max-width: 400px) {
-  .hero h2 {
-    font-size: 1.6rem;
-  }
-
-  .hero p {
-    font-size: 0.9rem;
-  }
-
-  .btn {
-    padding: 8px 15px;
-    font-size: 0.9rem;
-  }
-}
-
-/* ===== Responsive Design for Counselling ===== */
-@media (max-width: 992px) {
-  .counselling-section h2 {
-    font-size: 2rem;
-  }
-
-  .counselling-section p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .counselling-section {
-    padding: 40px 15px;
-  }
-
-  .counselling-section h2 {
-    font-size: 1.6rem;
-  }
-
-  .counselling-section p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  .phone-numbers {
-    font-size: 1rem;
-  }
-
-  .btn-call {
-    width: 100%;      /* button fills screen on small devices */
-    padding: 12px;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .counselling-section h2 {
-    font-size: 1.4rem;
-  }
-
-  .btn-call {
-    font-size: 0.9rem;
-    padding: 10px;
-  }
-}
-
-
-
-
-
-
-
-
-
+  margin-bottom: 1
