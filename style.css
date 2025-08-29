@@ -340,7 +340,7 @@ header nav ul li a.active {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Optional: Support Button */
+/* Optional: Support Button inside support-section */
 .support-section .btn-support {
   display: inline-block;
   padding: 12px 25px;
@@ -355,6 +355,59 @@ header nav ul li a.active {
 .support-section .btn-support:hover {
   background-color: #005fa3;
 }
+
+/* ===== Donation Form Styling ===== */
+.donation-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.donation-form label {
+  font-weight: 600;
+  color: #003366;
+  display: block;
+  width: 100%;
+  text-align: left;
+  max-width: 250px;
+}
+
+.donation-form input {
+  padding: 10px;
+  width: 250px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.donation-form button {
+  padding: 12px 25px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 250px;
+}
+
+.donation-form button:hover {
+  background-color: #005fa3;
+}
+
+/* Responsive tweaks for donation form */
+@media (max-width: 600px) {
+  .donation-form input,
+  .donation-form button {
+    width: 100%; /* make inputs and button full width on small screens */
+    max-width: 300px;
+  }
+}
+
 /* ===== Volunteers Section ===== */
 .volunteers {
   padding: 60px 20px;
@@ -660,6 +713,7 @@ footer a:hover {
     padding: 10px;
   }
 }
+
 
 
 
