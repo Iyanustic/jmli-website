@@ -1,42 +1,68 @@
-function payWithPaystack() {
-  // Get and clean the amount (remove commas)
-  var amountField = document.getElementById('donation-amount');
-  var amount = amountField.value.replace(/,/g, '');
+<script>
+  // ===== Paystack Payment Function =====
+  function payWithPaystack() {
+    const amountField = document.getElementById('donation-amount');
+    const emailField = document.getElementById('donor-email');
 
-  if (!amount || amount <= 0) {
-    alert("Please enter a valid donation amount");
-    return;
+    // Clean amount (remove commas) and validate
+    const amount = amountField.value.replace(/,/g, '');
+    if (!amount || amount <= 0) {
+      alert("Please enter a valid donation amount");
+      return;
+    }
+
+    // Use email field or fallback
+    const email = emailField?.value || 'oyebamijiadeiyanu@gmail.com';
+
+    const handler = PaystackPop.setup({
+      key: 'pk_test_438df37c1726d35987d94ab4255561db69a07c51', // TEST public key
+      email: email,
+      amount: amount * 100, // Convert Naira to kobo
+      currency: 'NGN',
+      ref: 'JMLI_' + Math.floor((Math.random() * 1000000000) + 1),
+      metadata: {
+        custom_fields: [
+          {
+            display_name: "Supporter Name",
+            variable_name: "supporter_name",
+            value: ""
+          }
+        ]
+      },
+      callback: function(response){
+        alert('Thank you for your donation! Reference: ' + response.reference);
+        // Clear fields after successful payment
+        amountField.value = '';
+        if(emailField) emailField.value = '';
+      },
+      onClose: function(){
+        alert('Transaction was not completed, window closed.');
+      }
+    });
+
+    handler.openIframe();
   }
 
-  // Get the email value
-  var email = document.getElementById('donor-email')?.value || 'oyebamijiadeiyanu@gmail.com'; // fallback email
+  // ===== Amount Input Formatting with Commas =====
+  const amountInput = document.querySelector('#donation-amount');
 
-  var handler = PaystackPop.setup({
-    key: 'pk_test_438df37c1726d35987d94ab4255561db69a07c51', // Your TEST public key
-    email: email,
-    amount: amount * 100, // Convert Naira to kobo
-    currency: 'NGN',
-    ref: 'JMLI_' + Math.floor((Math.random() * 1000000000) + 1),
-    metadata: {
-      custom_fields: [
-        {
-          display_name: "Supporter Name",
-          variable_name: "supporter_name",
-          value: ""
-        }
-      ]
-    },
-    callback: function(response){
-      alert('Thank you for your donation! Reference: ' + response.reference);
+  amountInput.addEventListener('input', () => {
+    let cursorPosition = amountInput.selectionStart;
+    let value = amountInput.value.replace(/,/g, ''); // Remove existing commas
 
-      // Clear input fields after successful payment
-      document.getElementById('donor-email').value = '';
-      document.getElementById('donation-amount').value = '';
-    },
-    onClose: function(){
-      alert('Transaction was not completed, window closed.');
+    if (value) {
+      // Split integer and decimal parts
+      let parts = value.split('.');
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ','); // Add commas to integer part
+      value = parts.join('.');
     }
-  });
 
-  handler.openIframe();
-}
+    // Adjust cursor position to account for commas
+    let beforeCommas = (amountInput.value.slice(0, cursorPosition).match(/,/g) || []).length;
+    let afterCommas = (value.slice(0, cursorPosition).match(/,/g) || []).length;
+    cursorPosition += (afterCommas - beforeCommas);
+
+    amountInput.value = value;
+    amountInput.setSelectionRange(cursorPosition, cursorPosition);
+  });
+</script>
