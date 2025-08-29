@@ -72,6 +72,39 @@
       <p>Contact us: +234 814 307 9345 | Email: juvenilementorship@gmail.com</p>
     </div>
   </footer>
+  
+ <!-- Paystack inline script -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script>
+    function payWithPaystack() {
+      var handler = PaystackPop.setup({
+        key: 'pk_test_xxxxxxx', // Replace with your TEST public key
+        email: '', // Optional: donor can prefill or leave empty
+        amount: 5000, // Amount in kobo (₦50 = 5000 kobo)
+        currency: 'NGN',
+        ref: 'JMLI_' + Math.floor((Math.random() * 1000000000) + 1), // Unique reference
+        metadata: {
+          custom_fields: [
+            {
+              display_name: "Supporter Name",
+              variable_name: "supporter_name",
+              value: ""
+            }
+          ]
+        },
+        callback: function(response){
+          alert('Thank you for your donation! Reference: ' + response.reference);
+          // Optionally redirect or verify payment via backend here
+        },
+        onClose: function(){
+          alert('Transaction was not completed, window closed.');
+        }
+      });
+      handler.openIframe();
+    }
+  </script>
 
+</body>
+</html>
 </body>
 </html>
