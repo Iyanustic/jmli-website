@@ -26,23 +26,26 @@
       </ul>
     </nav>
   </header>
-
 <!-- Support Section -->
-  <section class="support-section">
-    <div class="container">
-      <h2>Support Our Annual Project</h2>
-      <p>
-        Your contribution will help us enroll underprivileged children in school and empower juveniles in homes of reprimand with skills for a productive life.
-      </p>
-      <img src="images/jmli support.JPG" alt="Support JMLI" class="support-image">
+<section class="support-section">
+  <div class="container">
+    <h2>Support Our Annual Project</h2>
+    <p>
+      Your contribution will help us enroll underprivileged children in school and empower juveniles in homes of reprimand with skills for a productive life.
+    </p>
+    <img src="images/jmli support.JPG" alt="Support JMLI" class="support-image">
 
-      <!-- Donation Inputs -->
-      <div style="text-align:center; margin-top:20px;">
-        <input type="email" id="donor-email" placeholder="Enter your email" style="padding:8px; margin:5px; width:200px;">
-        <input type="number" id="donation-amount" placeholder="Enter amount in Naira" style="padding:8px; margin:5px; width:200px;">
-        <button class="btn-support" type="button" onclick="payWithPaystack()">Support Us</button>
-      </div>
+    <!-- Donation Form -->
+    <div class="donation-form" style="max-width:400px; margin:20px auto; text-align:left;">
+      <label for="donor-email" style="display:block; margin-bottom:5px; font-weight:600;">Email Address</label>
+      <input type="email" id="donor-email" placeholder="you@example.com" required style="width:100%; padding:8px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc;">
+
+      <label for="donation-amount" style="display:block; margin-bottom:5px; font-weight:600;">Donation Amount (NGN)</label>
+      <input type="number" id="donation-amount" placeholder="Enter amount" required style="width:100%; padding:8px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc;">
+
+      <button class="btn-support" type="button" onclick="payWithPaystack()" style="width:100%; padding:12px; font-weight:600;">Support Us</button>
     </div>
+  </div>
 </section>
 <div class="section-divider"></div>
   
